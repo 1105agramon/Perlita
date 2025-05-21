@@ -10,7 +10,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 
     // Inicializar el primer elemento visible
     images[currentIndex].classList.add('active');
-    setInterval(showNextImage, 3000); // Cambiar cada 3 segundos
+    setInterval(showNextImage, 10000); // Cambiar cada 3 segundos
 });
 
 function detenerCancion() {
