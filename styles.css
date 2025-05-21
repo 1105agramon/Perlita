@@ -1,0 +1,242 @@
+/* Reset mejorado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Video de fondo mejorado */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1000;
+    background-color: #000; /* Fondo negro si el video falla */
+    pointer-events: none; /* Permite interacción con elementos detrás */
+}
+
+/* Capa oscura para mejorar legibilidad */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -999;
+}
+
+/* Contenido principal */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Header optimizado para video de fondo */
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: rgba(0, 0, 0, 0.404); /* Semi-transparente */
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(5px); /* Efecto vidrio esmerilado */
+    border-bottom: 1px solid rgba(255, 77, 109, 0.3);
+}
+
+header h1 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    color: #ffffff; /* Color más claro para mejor contraste */
+    margin-bottom: 20px;
+}
+
+header button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #c9184a;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header button:hover {
+    background-color: #ff4d6d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Secciones mejoradas */
+.section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ffffff;
+    margin: 20px 0;
+    position: relative;
+}
+
+h1::after, h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ff4d6d;
+    margin: 10px auto;
+    border-radius: 3px;
+}
+
+/* Carrusel */
+/* Carrusel mejorado */
+.carousel {
+    position: relative;
+    width: 50%; /* Cambiado de max-width a width para más control */
+    margin: 30px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(255, 77, 109, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo para espacio sobrante */
+}
+
+.carousel img {
+    display: none;
+    max-width: 90%; /* La imagen ocupará máximo el 90% del ancho del carrusel */
+    max-height: 80vh; /* Altura máxima */
+    width: auto; /* Mantiene relación de aspecto */
+    height: auto; /* Mantiene relación de aspecto */
+    object-fit: contain; /* Cambiado de 'cover' a 'contain' para ver imagen completa */
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
+    margin: 20px 0; /* Espacio vertical */
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+
+/* Listas */
+ul {
+    list-style-type: disc;
+    margin: 10px 0 20px 30px;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 10px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.footer-text, .footer-contacto {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-contacto ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-contacto ul li {
+    margin-bottom: 10px;
+}
+
+.footer-contacto a {
+    color: #ff4d6d;
+    text-decoration: none;
+}
+
+.footer-contacto a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-text, .footer-contacto {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .carousel {
+        width: 80%; /* Más ancho en tablets */
+    }
+    .carousel img {
+        max-width: 95%; /* Más espacio para la imagen */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        width: 95%; /* Casi todo el ancho en móviles */
+    }
+    .carousel img {
+        max-height: 70vh; /* Altura menor en móviles */
+    }
+}
